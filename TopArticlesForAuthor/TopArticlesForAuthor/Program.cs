@@ -11,17 +11,40 @@ namespace TopArticlesForAuthor
 {
     class Program
     {
+        #region Init
+
+        internal enum User
+        {
+            olalonde
+        }
+
+        static string userName;
+        static int limit;
         static string baseUrl = "https://jsonmock.hackerrank.com/api/";
         static RestClient client = new RestClient { BaseUrl = new Uri(baseUrl) };
+
+        static void InitializeData(User user)
+        {
+            switch (user)
+            {
+                case User.olalonde:
+                    string userName = "olalonde";
+                    int limit = 1;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        #endregion
 
         static void Main(string[] args)
         {
             try
             {
-                string userName = "olalonde";
-                int limit = 1;
-                List<string> Articles = GetTopArticles(userName, limit);
-                foreach (var item in Articles)
+                InitializeData(User.olalonde);
+                List<string> TopArticles = GetTopArticles(userName, limit);
+                foreach (var item in TopArticles)
                 {
                     Console.WriteLine(item);
                 }
@@ -38,6 +61,7 @@ namespace TopArticlesForAuthor
             try
             {
                 List<Article> Articles = GetArticles(GetSpecification(userName, limit));
+                //
                 return null;
             }
             catch (Exception exception)
