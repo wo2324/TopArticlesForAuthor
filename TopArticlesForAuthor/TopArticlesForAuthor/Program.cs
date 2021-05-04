@@ -14,9 +14,13 @@ namespace TopArticlesForAuthor
 
         static void Main(string[] args)
         {
+            string userName = "olalonde";
+            int limit = 1;
+            topArticles(userName, limit);
+            Console.ReadLine();
         }
 
-        static List<string> topArticles(string username, int limit)
+        static List<string> topArticles(string userName, int limit)
         {
             List<string> Articles = new List<string>();
             return Articles;
