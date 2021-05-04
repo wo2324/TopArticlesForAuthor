@@ -52,7 +52,7 @@
   <ItemGroup>
     <Compile Include="Article.cs" />
     <Compile Include="ArticleResponse.cs" />
-    <Compile Include="ArticleResult.cs" />
+    <Compile Include="ArticleFinal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
