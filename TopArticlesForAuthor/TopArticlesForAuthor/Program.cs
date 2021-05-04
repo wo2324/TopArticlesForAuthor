@@ -62,14 +62,7 @@ namespace TopArticlesForAuthor
             {
                 List<Article> Articles = GetArticles(GetSpecification(userName, limit));
                 List<ArticleFinal> ArticlesFinal = Articles.Select(x => new ArticleFinal(x)).ToList();
-                /* 1. Top limit
-                 * +. if (story == null && story title == null) -> ignore
-                 * 2. *
-                 * +. name = title == null ? title : story_title
-                 * 4. order by num_comments desc, name asc
-                 */
-                //var results = Articles.OrderByDescending(x => x.num_comments).ThenBy(x => x.).Select(x => x.Grp);
-                return null;
+                return ArticlesFinal.OrderByDescending(x => x.num_comments).ThenBy(x => x.name).Select(x => x.name).Take(limit).ToList();
             }
             catch (Exception exception)
             {
