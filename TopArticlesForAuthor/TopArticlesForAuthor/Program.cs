@@ -15,5 +15,11 @@ namespace TopArticlesForAuthor
         static void Main(string[] args)
         {
         }
+
+        static List<string> topArticles(string username, int limit)
+        {
+            List<string> Articles = new List<string>();
+            return Articles;
+        }
     }
 }
