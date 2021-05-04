@@ -61,7 +61,11 @@ namespace TopArticlesForAuthor
             try
             {
                 List<Article> Articles = GetArticles(GetSpecification(userName, limit));
-                //
+                /* 1. Top limit
+                 * 2. if (story == null && story title == null) -> ignore
+                 * 3. name = title == null ? title : story_title
+                 * 4. order by num_comments desc, name asc
+                 */
                 return null;
             }
             catch (Exception exception)
