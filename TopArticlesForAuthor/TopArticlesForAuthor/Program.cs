@@ -16,16 +16,30 @@ namespace TopArticlesForAuthor
 
         static void Main(string[] args)
         {
-            string userName = "olalonde";
-            int limit = 1;
-            //
+            try
+            {
+                string userName = "olalonde";
+                int limit = 1;
+                //
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
             Console.ReadLine();
         }
 
         static void Sample(string userName, int limit)
         {
-            List<Article> Articles = GetArticles(GetSpecification(userName, limit));
-            //
+            try
+            {
+                List<Article> Articles = GetArticles(GetSpecification(userName, limit));
+                //
+            }
+            catch (Exception exception)
+            {
+                throw exception;
+            }
         }
 
         static List<Article> GetArticles(string specification)
