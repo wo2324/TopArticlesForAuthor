@@ -15,7 +15,9 @@ namespace TopArticlesForAuthor
 
         internal enum User
         {
-            olalonde
+            olalonde,
+            patricktomas,
+            panny
         }
 
         static string userName;
@@ -31,6 +33,14 @@ namespace TopArticlesForAuthor
                     userName = "olalonde";
                     limit = 1;
                     break;
+                case User.patricktomas:
+                    userName = "patricktomas";
+                    limit = 2;
+                    break;
+                case User.panny:
+                    userName = "panny";
+                    limit = 4;
+                    break;
                 default:
                     break;
             }
@@ -42,7 +52,7 @@ namespace TopArticlesForAuthor
         {
             try
             {
-                InitializeData(User.olalonde);
+                InitializeData(User.panny);
                 List<string> TopArticles = GetTopArticles(userName, limit);
                 foreach (var item in TopArticles)
                 {
