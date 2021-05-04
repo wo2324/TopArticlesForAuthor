@@ -11,7 +11,7 @@ namespace TopArticlesForAuthor
 {
     class Program
     {
-        #region Init
+        #region Initialize
 
         internal enum User
         {
