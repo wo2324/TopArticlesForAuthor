@@ -18,11 +18,17 @@ namespace TopArticlesForAuthor
         {
             string userName = "olalonde";
             int limit = 1;
-            topArticles(GetSpecification(userName, limit));
+            //
             Console.ReadLine();
         }
 
-        static List<string> topArticles(string specification)
+        static void Sample(string userName, int limit)
+        {
+            List<Article> Articles = GetArticles(GetSpecification(userName, limit));
+            //
+        }
+
+        static List<Article> GetArticles(string specification)
         {
             var request = new RestRequest(Method.GET);
             request.AddHeader("Content-Type", "application/json");
@@ -33,9 +39,7 @@ namespace TopArticlesForAuthor
                 throw new Exception(response.Content);
             }
             ArticleResponse articleResponse = JsonConvert.DeserializeObject<ArticleResponse>(response.Content);
-
-            List<string> Articles = new List<string>();
-            return Articles;
+            return articleResponse.data;
         }
 
         static string GetSpecification(string userName, int limit)
