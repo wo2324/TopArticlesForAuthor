@@ -28,8 +28,8 @@ namespace TopArticlesForAuthor
             switch (user)
             {
                 case User.olalonde:
-                    string userName = "olalonde";
-                    int limit = 1;
+                    userName = "olalonde";
+                    limit = 1;
                     break;
                 default:
                     break;
