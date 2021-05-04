@@ -8,14 +8,14 @@ namespace TopArticlesForAuthor
 {
     class Article
     {
-        internal string title;
-        internal string url;
-        internal string author;
-        internal string num_comments;
-        internal string story_id;
-        internal string story_title;
-        internal string story_url;
-        internal string parent_id;
-        internal string created_at;
+        public string title;
+        public string url;
+        public string author;
+        public string num_comments;
+        public string story_id;
+        public string story_title;
+        public string story_url;
+        public string parent_id;
+        public string created_at;
     }
 }

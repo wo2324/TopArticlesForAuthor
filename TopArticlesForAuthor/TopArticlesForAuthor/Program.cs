@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace TopArticlesForAuthor
             {
                 throw new Exception(response.Content);
             }
+            ArticleResponse articleResponse = JsonConvert.DeserializeObject<ArticleResponse>(response.Content);
 
             List<string> Articles = new List<string>();
             return Articles;
