@@ -20,7 +20,11 @@ namespace TopArticlesForAuthor
             {
                 string userName = "olalonde";
                 int limit = 1;
-                //
+                List<string> Articles = GetTopArticles(userName, limit);
+                foreach (var item in Articles)
+                {
+                    Console.WriteLine(item);
+                }
             }
             catch (Exception exception)
             {
@@ -29,12 +33,12 @@ namespace TopArticlesForAuthor
             Console.ReadLine();
         }
 
-        static void Sample(string userName, int limit)
+        static List<string> GetTopArticles(string userName, int limit)
         {
             try
             {
                 List<Article> Articles = GetArticles(GetSpecification(userName, limit));
-                //
+                return null;
             }
             catch (Exception exception)
             {
